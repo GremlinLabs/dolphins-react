@@ -13,10 +13,13 @@ class Home extends Component {
     render() {
         return (
             <div className="home-content container-fluid">
+                <div className="jumbotron">
+
+                </div>
                 <div className="row">
                     <div className="col-md-8">
                         <div className="content-wrapper">
-                            <iframe src="https://player.vimeo.com/video/197543527" width="640" height="360" frameBorder="0" allowFullScreen></iframe>
+
                         </div>
                     </div>
                     <div className="col-md-2">

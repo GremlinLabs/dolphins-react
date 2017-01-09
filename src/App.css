@@ -1,24 +1,146 @@
-.App {
-  text-align: center;
-  background-color: dodgerblue;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 120px;
-  float: left;
+html {
+  -webkit-locale: "en-GB";
+  overflow-y: scroll;
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
   display: block;
 }
 
-.App-header {
+html,body {
+  height:100%;
+}
+
+body {
+  font-size: 14px;
+  font-family: Ropa Sans;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#c5deea+0,8abbd7+31,066dab+100;Web+2.0+Blue+3D+%231 */
+  background: rgb(197,222,234); /* Old browsers */
+  background: -moz-linear-gradient(top,  rgba(197,222,234,1) 0%, rgba(138,187,215,1) 31%, rgba(6,109,171,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  rgba(197,222,234,1) 0%,rgba(138,187,215,1) 31%,rgba(6,109,171,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  rgba(197,222,234,1) 0%,rgba(138,187,215,1) 31%,rgba(6,109,171,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c5deea', endColorstr='#066dab',GradientType=0 ); /* IE6-9 */
+  color: #4a4e51;
+  line-height: 1.6;
+}
+
+.clear {
+  clear: both;
+}
+
+.page-wrapper {
+  width: 980px;
+  max-width: 100%;
+  margin: 0 auto;
+  margin-top: 30px;
+  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+  background-color: #f1f1ed;
+  border-radius: 5px;
+}
+
+.app-logo {
+  height: 320px;
+  margin: auto;
+  border-radius: 12px;
+  display: block;
+}
+
+.header-container {
+  color: transparent;
+}
+
+.app-header {
   position: relative;
-  background-color: #222;
-  width: 80%;
+  width: 100%;
   padding: 20px;
-  color: white;
   display: inline-block;
   border-radius: 5px;
 }
+
+.app-header img {
+
+}
+
+/*----------------------------- 3.3 Navigation Menu --------------------------------*/
+#navigation-container {
+  display: inline-block;
+  margin: auto;
+  overflow: auto;
+}
+#menu ul {
+  margin-left: 0;
+}
+#menu ul li {
+  display: inline;
+  float: left;
+  position: relative;
+}
+#menu ul li a {
+  display: block;
+  padding: 2px 14px;
+}
+#menu ul ul {
+  width: 170px;
+  position: absolute;
+  top: 18px;
+  padding-top: 25px;
+  z-index: 20000;
+  display: none;
+  margin-top: 1px;
+}
+#menu ul ul ul {
+  top: 0;
+  left: 170px;
+}
+#menu ul ul li {
+  display: block;
+  width: 100%;
+  float: left;
+  padding: 6px 0 5px 0;
+  background-color: #fff;
+}
+#menu ul ul li a {
+  line-height: 1.8em;
+  letter-spacing: 0;
+}
+#menu ul li.current-menu-item ul li a,
+#menu ul li.current-menu-ancestor ul li a {
+  /*.opacity;*/
+
+}
+#menu ul ul li:hover,
+#menu ul ul .current-menu-item {
+  background-color: #f9f9f7;
+}
+.mobile-nav, .mob-nav-menu {
+  display: none;
+}
+
+#menu ul li a {
+  font-size: 17px;
+  font-family: Ropa Sans;
+  border-right: 1px dotted #cccccc;
+  line-height: 0.5em;
+  color: #4a4e51;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: block;
+  padding: 2px 14px;
+}
+
+a {
+  color: #383838;
+  text-decoration: none;
+}
+
+/*----------------------------- END Navigation Menu --------------------------------*/
 
 .dolphins-navbar {
   margin-left: auto;
@@ -27,15 +149,13 @@
   width: 80%;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-}
-
-.App-intro {
-  font-size: large;
+  background-color: white;
 }
 
 .content {
-  background-color: #222;
+  background-color: white;
   position: relative;
+  height: 80%;
   width: 80%;
   margin-left: auto;
   margin-right: auto;
@@ -46,7 +166,83 @@
   padding: 5%;
 }
 
-@keyframes App-logo-spin {
-  /*from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }*/
+@media screen and (max-width: 800px) {
+  .mobile-nav {
+    display: block;
+    float: right;
+    cursor: pointer;
+    margin: 36px 3.06%;
+    margin-right: 0px;
+
+  }
+
+  .mob-nav-btn {
+    height: 15px;
+    display: block;
+    background: url(images/mob-nav-icon.png) no-repeat;
+    background-size: 20px 15px;
+    padding-left: 27px;
+    line-height: 1.2em;
+  }
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen
+and (min-width : 320px)
+and (max-width : 480px) {
+  /* Styles */
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen
+and (min-width : 321px) {
+  /* Styles */
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen
+and (max-width : 320px) {
+  /* Styles */
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen
+and (min-width : 768px)
+and (max-width : 1024px) {
+  /* Styles */
+}
+
+/* iPads (landscape) ----------- */
+@media only screen
+and (min-width : 768px)
+and (max-width : 1024px)
+and (orientation : landscape) {
+  /* Styles */
+}
+
+/* iPads (portrait) ----------- */
+@media only screen
+and (min-width : 768px)
+and (max-width : 1024px)
+and (orientation : portrait) {
+  /* Styles */
+}
+
+/* Desktops and laptops ----------- */
+@media only screen
+and (min-width : 1224px) {
+  /* Styles */
+}
+
+/* Large screens ----------- */
+@media only screen
+and (min-width : 1824px) {
+  /* Styles */
+}
+
+/* iPhone 4 ----------- */
+@media
+only screen and (-webkit-min-device-pixel-ratio : 1.5),
+only screen and (min-device-pixel-ratio : 1.5) {
+  /* Styles */
 }

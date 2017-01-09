@@ -2,8 +2,9 @@
  * Created by conalmclaughlin on 02/01/2017.
  */
 import React, { Component } from 'react';
+import { IndexLink, Link } from 'react-router';
 const $ = require('jquery');
-import logo from './dolphins-logo.png';
+import banner from './images/logo.svg';
 
 class Header extends Component {
     constructor(props) {
@@ -14,20 +15,20 @@ class Header extends Component {
     render() {
         return (
             <div className="header-container">
-                <div className="App-header">
-                    <img src={logo} className="App-logo" alt="logo" />
+                <div className="app-header">
+                    <img src={banner} className="app-logo" alt="" />
                 </div>
-                <nav className="navbar navbar-inverse dolphins-navbar">
+                <div className="mobile-nav">
+                    <span className="mob-nav-btn">Menu</span>
+                </div>
+                <nav className="navbar navbar dolphins-navbar">
                     <div className="container-fluid">
-                        <div className="navbar-header">
-                            <a className="navbar-brand" href="#">Doplins SAC</a>
-                        </div>
                         <ul className="nav navbar-nav">
-                            <li className="active"><a href="#" onClick=''>Home</a></li>
-                            <li><a href="/gallery" onClick=''>Gallery</a></li>
-                            <li><a href="/events" onClick=''>Events</a></li>
-                            <li><a href="/about" onClick=''>About</a></li>
-                            <li><a href="/contact" onClick=''>Contact</a></li>
+                            <li className="menu-item"><Link to="/">Home</Link></li>
+                            <li className="menu-item"><Link to="/gallery">Gallery</Link></li>
+                            <li className="menu-item"><Link to="/events">What's Happening?</Link></li>
+                            <li className="menu-item"><Link to="/about">About Us</Link></li>
+                            <li className="menu-item"><Link to="/contact">Want to dive?</Link></li>
                         </ul>
                     </div>
                 </nav>

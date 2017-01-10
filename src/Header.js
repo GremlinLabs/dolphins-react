@@ -4,9 +4,9 @@
 import React, { Component } from 'react';
 import { IndexLink, Link } from 'react-router';
 const $ = require('jquery');
-import banner from './images/logo.svg';
+import logo from './images/dolphins_logo.svg';
 
-class Header extends Component {
+class Header_new extends Component {
     constructor(props) {
         super(props);
         this.state = {};
@@ -16,25 +16,26 @@ class Header extends Component {
         return (
             <div className="header-container">
                 <div className="app-header">
-                    <img src={banner} className="app-logo" alt="" />
+                    <img src={logo} className="app-logo" alt="" />
                 </div>
                 <div className="mobile-nav">
                     <span className="mob-nav-btn">Menu</span>
                 </div>
-                <nav className="navbar navbar dolphins-navbar">
-                    <div className="container-fluid">
-                        <ul className="nav navbar-nav">
-                            <li className="menu-item"><Link to="/">Home</Link></li>
-                            <li className="menu-item"><Link to="/gallery">Gallery</Link></li>
-                            <li className="menu-item"><Link to="/events">What's Happening?</Link></li>
-                            <li className="menu-item"><Link to="/about">About Us</Link></li>
-                            <li className="menu-item"><Link to="/contact">Want to dive?</Link></li>
+                <div id="navigation-container">
+                    <div id="menu-container">
+                        <ul id="menu-header_menu" className="menu">
+                            <li className="menu-item"><IndexLink to="/" activeClassName="nav-active">Home</IndexLink></li>
+                            <li className="menu-item"><Link to="/gallery" activeClassName="nav-active">Gallery</Link></li>
+                            <li className="menu-item"><Link to="/events" activeClassName="nav-active">What's Happening?</Link></li>
+                            <li className="menu-item"><Link to="/about" activeClassName="nav-active">About Us</Link></li>
+                            <li className="menu-item"><Link to="/contact" activeClassName="nav-active">Want to dive?</Link></li>
                         </ul>
                     </div>
-                </nav>
+                </div>
+                <div className="clear" />
             </div>
         )
     }
 }
 
-export default Header;
+export default Header_new;

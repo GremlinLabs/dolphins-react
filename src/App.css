@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "COCOGOOSE";
+  src: url("./fonts/cocogoose/cocogoose.otf") format("opentype");
+}
+
 html {
   -webkit-locale: "en-GB";
   overflow-y: scroll;
@@ -20,13 +25,23 @@ body {
   font-size: 14px;
   font-family: Ropa Sans;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#c5deea+0,8abbd7+31,066dab+100;Web+2.0+Blue+3D+%231 */
-  background: rgb(197,222,234); /* Old browsers */
-  background: -moz-linear-gradient(top,  rgba(197,222,234,1) 0%, rgba(138,187,215,1) 31%, rgba(6,109,171,1) 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top,  rgba(197,222,234,1) 0%,rgba(138,187,215,1) 31%,rgba(6,109,171,1) 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom,  rgba(197,222,234,1) 0%,rgba(138,187,215,1) 31%,rgba(6,109,171,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c5deea', endColorstr='#066dab',GradientType=0 ); /* IE6-9 */
+  /*background: rgb(197,222,234); /* Old browsers */
+  /*background: -moz-linear-gradient(top,  rgba(197,222,234,1) 0%, rgba(138,187,215,1) 31%, rgba(6,109,171,1) 100%); /* FF3.6-15 */
+  /*background: -webkit-linear-gradient(top,  rgba(197,222,234,1) 0%,rgba(138,187,215,1) 31%,rgba(6,109,171,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  /*background: linear-gradient(to bottom,  rgba(197,222,234,1) 0%,rgba(138,187,215,1) 31%,rgba(6,109,171,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c5deea', endColorstr='#066dab',GradientType=0 );  /*IE6-9 */
+
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0257d4+0,0a0809+100,0a0809+100 */
+  background: rgb(2,87,212); /* Old browsers */
+  background: -moz-linear-gradient(top,  rgba(2,87,212,1) 0%, rgba(10,8,9,1) 100%, rgba(10,8,9,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  rgba(2,87,212,1) 0%,rgba(10,8,9,1) 100%,rgba(10,8,9,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  rgba(2,87,212,1) 0%,rgba(10,8,9,1) 100%,rgba(10,8,9,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0257d4', endColorstr='#0a0809',GradientType=0 ); /* IE6-9 */
+
+
   color: #4a4e51;
   line-height: 1.6;
+  background-repeat: no-repeat;
 }
 
 .clear {
@@ -52,6 +67,15 @@ body {
   display: block;
 }
 
+#diver-icon {
+  position: absolute;
+  top: 40px;
+  left: 490px;
+  height: 40px;
+  width: 40px;
+  background-image: url('./images/diving-icons-svg/svg/diver.svg');
+}
+
 .header-container {
   color: transparent;
 }
@@ -73,20 +97,25 @@ body {
   display: inline-block;
   margin: auto;
   overflow: auto;
+  width: 100%;
 }
-#menu ul {
+#menu-container {
+  width: 80%;
+  margin: auto;
+}
+#menu-container ul {
   margin-left: 0;
 }
-#menu ul li {
+#menu-container ul li {
   display: inline;
   float: left;
   position: relative;
 }
-#menu ul li a {
+#menu-container ul li a {
   display: block;
   padding: 2px 14px;
 }
-#menu ul ul {
+#menu-container ul ul {
   width: 170px;
   position: absolute;
   top: 18px;
@@ -95,35 +124,35 @@ body {
   display: none;
   margin-top: 1px;
 }
-#menu ul ul ul {
+#menu-container ul ul ul {
   top: 0;
   left: 170px;
 }
-#menu ul ul li {
+#menu-container ul ul li {
   display: block;
   width: 100%;
   float: left;
   padding: 6px 0 5px 0;
   background-color: #fff;
 }
-#menu ul ul li a {
+#menu-container ul ul li a {
   line-height: 1.8em;
   letter-spacing: 0;
 }
-#menu ul li.current-menu-item ul li a,
-#menu ul li.current-menu-ancestor ul li a {
+#menu-container ul li.current-menu-item ul li a,
+#menu-container ul li.current-menu-ancestor ul li a {
   /*.opacity;*/
 
 }
-#menu ul ul li:hover,
-#menu ul ul .current-menu-item {
+#menu-container ul ul li:hover,
+#menu-container ul ul .current-menu-item {
   background-color: #f9f9f7;
 }
 .mobile-nav, .mob-nav-menu {
   display: none;
 }
 
-#menu ul li a {
+#menu-container ul li a {
   font-size: 17px;
   font-family: Ropa Sans;
   border-right: 1px dotted #cccccc;
@@ -155,8 +184,8 @@ a {
 .content {
   background-color: white;
   position: relative;
-  height: 80%;
-  width: 80%;
+  height: 100%;
+  width: 90%;
   margin-left: auto;
   margin-right: auto;
   padding: 20px;

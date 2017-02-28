@@ -1,5 +1,5 @@
 @font-face {
-  font-family: "COCOGOOSE";
+  font-family: "cocogoose";
   src: url("./fonts/cocogoose/cocogoose.otf") format("opentype");
 }
 
@@ -15,32 +15,31 @@ html {
   font-size: 100%;
   vertical-align: baseline;
   display: block;
+  background-color: #0f0f0f;
 }
 
-html,body {
-  height:100%;
+body, html {
+  height: 100%;
 }
 
 body {
   font-size: 14px;
-  font-family: Ropa Sans;
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#c5deea+0,8abbd7+31,066dab+100;Web+2.0+Blue+3D+%231 */
-  /*background: rgb(197,222,234); /* Old browsers */
-  /*background: -moz-linear-gradient(top,  rgba(197,222,234,1) 0%, rgba(138,187,215,1) 31%, rgba(6,109,171,1) 100%); /* FF3.6-15 */
-  /*background: -webkit-linear-gradient(top,  rgba(197,222,234,1) 0%,rgba(138,187,215,1) 31%,rgba(6,109,171,1) 100%); /* Chrome10-25,Safari5.1-6 */
-  /*background: linear-gradient(to bottom,  rgba(197,222,234,1) 0%,rgba(138,187,215,1) 31%,rgba(6,109,171,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c5deea', endColorstr='#066dab',GradientType=0 );  /*IE6-9 */
-
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0257d4+0,0a0809+100,0a0809+100 */
-  background: rgb(2,87,212); /* Old browsers */
-  background: -moz-linear-gradient(top,  rgba(2,87,212,1) 0%, rgba(10,8,9,1) 100%, rgba(10,8,9,1) 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top,  rgba(2,87,212,1) 0%,rgba(10,8,9,1) 100%,rgba(10,8,9,1) 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom,  rgba(2,87,212,1) 0%,rgba(10,8,9,1) 100%,rgba(10,8,9,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0257d4', endColorstr='#0a0809',GradientType=0 ); /* IE6-9 */
-
-
+  font-family: Ropa Sans, Ariel, SansSerif, Serif;
+  position: relative;
   color: #4a4e51;
   line-height: 1.6;
+  background: fixed no-repeat;
+  margin: 0;
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+  background: rgb(230,245,254); /* Old browsers */
+  background: -moz-linear-gradient(top,  rgba(230,245,254,1) 38%, rgba(230,245,254,1) 38%, rgba(10,8,9,1) 100%, rgba(10,8,9,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  rgba(230,245,254,1) 38%,rgba(230,245,254,1) 38%,rgba(10,8,9,1) 100%,rgba(10,8,9,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  rgba(230,245,254,1) 38%,rgba(230,245,254,1) 38%,rgba(10,8,9,1) 100%,rgba(10,8,9,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6f5fe', endColorstr='#0a0809',GradientType=0 ); /* IE6-9 */
   background-repeat: no-repeat;
 }
 
@@ -52,19 +51,24 @@ body {
   width: 980px;
   max-width: 100%;
   margin: 0 auto;
-  margin-top: 30px;
-  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
-  background-color: #f1f1ed;
-  border-radius: 5px;
+  overflow: auto;
+}
+
+.canvas {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
 }
 
 .app-logo {
-  height: 320px;
-  margin: auto;
+  position: relative;
+  z-index: 50;
+  height: 110px;
   border-radius: 12px;
   display: block;
+  float: left;
+  margin-bottom: -65px;
 }
 
 #diver-icon {
@@ -88,8 +92,15 @@ body {
   border-radius: 5px;
 }
 
-.app-header img {
-
+.content {
+  background-color: white;
+  position: relative;
+  height: 100%;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  border-top-style: double;
 }
 
 /*----------------------------- 3.3 Navigation Menu --------------------------------*/
@@ -169,8 +180,103 @@ a {
   text-decoration: none;
 }
 
+#menu-container ul li a:hover {
+  text-decoration: overline;
+}
+
+a.nav-active {
+  text-decoration: overline;
+}
+
+
 /*----------------------------- END Navigation Menu --------------------------------*/
 
+/*----------------------------- Member List ---------------------------------*/
+
+.about-content .member-row {
+  width: 95%;
+  margin: auto;
+}
+.member-list {
+  display: inline-block;
+  margin-left: -45px;
+}
+ul.member-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.member-list li {
+  display: inline;
+}
+.member-list img {
+  height: 140px;
+  width: 140px;
+  border: 4px solid black;
+  border-radius: 100%;
+}
+@media (min-width: 768px){
+  .seven-cols .col-md-1,
+  .seven-cols .col-sm-1,
+  .seven-cols .col-lg-1  {
+    width: 100%;
+    *width: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  .seven-cols .col-md-1,
+  .seven-cols .col-sm-1,
+  .seven-cols .col-lg-1 {
+    width: 14.285714285714285714285714285714%;
+    *width: 14.285714285714285714285714285714%;
+  }
+}
+
+/**
+ *  The following is not really needed in this case
+ *  Only to demonstrate the usage of @media for large screens
+ */
+@media (min-width: 1200px) {
+  .seven-cols .col-md-1,
+  .seven-cols .col-sm-1,
+  .seven-cols .col-lg-1 {
+    width: 14.285714285714285714285714285714%;
+    *width: 14.285714285714285714285714285714%;
+  }
+}
+/*-----------------------------END Member List ------------------------------*/
+/*-----------------------------------Home------------------------------------*/
+
+.home-content {
+  padding: 5%;
+  font-family: Ropa Sans, Ariel, SansSerif, Serif;
+}
+
+#main-video {
+  width: 100%;
+  margin: auto;
+}
+/*-------------------------------END Home------------------------------------*/
+/*-----------------------------------Footer----------------------------------*/
+.footer-background-container {
+  bottom: 0px;
+  width: 100%;
+  background-color: #0f0f0f;
+  border-top-style: double;
+}
+
+ul.footer-menu {
+  position: inherit;
+  width: 100%;
+  list-style: none;
+}
+
+ul li.footer-menu-item{
+  display: inline-block;
+  float: right;
+}
+/*-------------------------------END Footer----------------------------------*/
 .dolphins-navbar {
   margin-left: auto;
   margin-right: auto;
@@ -179,20 +285,6 @@ a {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   background-color: white;
-}
-
-.content {
-  background-color: white;
-  position: relative;
-  height: 100%;
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 20px;
-}
-
-.home-content {
-  padding: 5%;
 }
 
 @media screen and (max-width: 800px) {

@@ -26,21 +26,25 @@ body {
   font-size: 14px;
   font-family: Ropa Sans, Ariel, SansSerif, Serif;
   position: relative;
-  color: #4a4e51;
+  color: aliceblue;
   line-height: 1.6;
   background: fixed no-repeat;
   margin: 0;
   height: 100%;
 }
 
-#root {
+/*#root {
   height: 100%;
   background: rgb(230,245,254); /* Old browsers */
-  background: -moz-linear-gradient(top,  rgba(230,245,254,1) 38%, rgba(230,245,254,1) 38%, rgba(10,8,9,1) 100%, rgba(10,8,9,1) 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top,  rgba(230,245,254,1) 38%,rgba(230,245,254,1) 38%,rgba(10,8,9,1) 100%,rgba(10,8,9,1) 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom,  rgba(230,245,254,1) 38%,rgba(230,245,254,1) 38%,rgba(10,8,9,1) 100%,rgba(10,8,9,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6f5fe', endColorstr='#0a0809',GradientType=0 ); /* IE6-9 */
-  background-repeat: no-repeat;
+  /*background: -moz-linear-gradient(top,  rgba(230,245,254,1) 38%, rgba(230,245,254,1) 38%, rgba(10,8,9,1) 100%, rgba(10,8,9,1) 100%); /* FF3.6-15 */
+  /*background: -webkit-linear-gradient(top,  rgba(230,245,254,1) 38%,rgba(230,245,254,1) 38%,rgba(10,8,9,1) 100%,rgba(10,8,9,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  /*background: linear-gradient(to bottom,  rgba(230,245,254,1) 38%,rgba(230,245,254,1) 38%,rgba(10,8,9,1) 100%,rgba(10,8,9,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6f5fe', endColorstr='#0a0809',GradientType=0 ); /* IE6-9 */
+  /*background-repeat: no-repeat;
+}*/
+
+#root {
+  background: #1a1b1f;
 }
 
 .clear {
@@ -61,10 +65,10 @@ body {
   height: 100%;
 }
 
-.app-logo {
+.app-logo img {
   position: relative;
   z-index: 50;
-  height: 110px;
+  height: 200px;
   border-radius: 12px;
   display: block;
   float: left;
@@ -93,14 +97,34 @@ body {
 }
 
 .content {
-  background-color: white;
   position: relative;
   height: 100%;
-  width: 90%;
   margin-left: auto;
   margin-right: auto;
   padding: 20px;
   border-top-style: double;
+}
+
+.main-title {
+  -webkit-transform: translateY(-80%);
+  transform: translateY(-80%);
+  transition: -webkit-transform .75s ease-out;
+  transition: transform .75s ease-out;
+  transition: transform .75s ease-out,-webkit-transform .75s ease-out;
+  padding: 20px 15px;
+}
+
+.main-title span {
+  display: inline-block;
+  position: relative;
+  left: -.09em;
+  font-size: 32px;
+  font-weight: 300;
+  letter-spacing: -.05em;
+  line-height: 1.25;
+  margin-top: 0;
+  width: 100%;
+  color: aliceblue;
 }
 
 /*----------------------------- 3.3 Navigation Menu --------------------------------*/
@@ -330,83 +354,214 @@ ul li.footer-menu-item{
   background-color: white;
 }
 
-@media screen and (max-width: 800px) {
+@media only screen and (min-width: 768px) {
+  /* tablets and desktop */
+}
+
+@media only screen and (max-width: 767px) {
+  /* phones */
+}
+
+@media only screen and (max-width: 767px) and (orientation: portrait) {
+  .app-header {
+    padding: 10px;
+  }
   .mobile-nav {
     display: block;
-    float: right;
     cursor: pointer;
-    margin: 36px 3.06%;
-    margin-right: 0px;
+    margin: 15px 3.06% 36px 3.06%;
+  }
 
+  #navigation-container {
+    display: none;
   }
 
   .mob-nav-btn {
     height: 15px;
     display: block;
     background: url(images/mob-nav-icon.png) no-repeat;
-    background-size: 20px 15px;
-    padding-left: 27px;
+    background-size: 29px 15px;
     line-height: 1.2em;
   }
-}
 
-/* Smartphones (portrait and landscape) ----------- */
-@media only screen
-and (min-width : 320px)
-and (max-width : 480px) {
-  /* Styles */
-}
+  .app-logo img {
+    position: relative;
+    z-index: 50;
+    height: 50px;
+    border-radius: 12px;
+    display: block;
+    float: left;
+    margin-bottom: -65px;
+  }
 
-/* Smartphones (landscape) ----------- */
-@media only screen
-and (min-width : 321px) {
-  /* Styles */
-}
+  .mobile-menu-container-full {
+    width: 100%;
+  }
 
-/* Smartphones (portrait) ----------- */
-@media only screen
-and (max-width : 320px) {
-  /* Styles */
-}
+  #mobile-menu-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 12;
+    width: 0;
+    transition: width .35s;
+  }
 
-/* iPads (portrait and landscape) ----------- */
-@media only screen
-and (min-width : 768px)
-and (max-width : 1024px) {
-  /* Styles */
-}
+  .mobile-menu-background {
+    right: 0;
+  }
 
-/* iPads (landscape) ----------- */
-@media only screen
-and (min-width : 768px)
-and (max-width : 1024px)
-and (orientation : landscape) {
-  /* Styles */
-}
+  .mobile-menu-background, .mobile-menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+  }
 
-/* iPads (portrait) ----------- */
-@media only screen
-and (min-width : 768px)
-and (max-width : 1024px)
-and (orientation : portrait) {
-  /* Styles */
-}
+  #mobile-menu-container.mobile-menu-container-full .mobile-menu {
+    width: 350px;
+    max-width: 100vw;
+  }
 
-/* Desktops and laptops ----------- */
-@media only screen
-and (min-width : 1224px) {
-  /* Styles */
-}
+  .mobile-menu {
+    width: 0;
+    color: #1c1b1b;
+    background: aliceblue;
+    overflow: hidden;
+    transition: width .35s;
+  }
 
-/* Large screens ----------- */
-@media only screen
-and (min-width : 1824px) {
-  /* Styles */
-}
+  .mobile-menu-holder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 320px;
+  }
 
-/* iPhone 4 ----------- */
-@media
-only screen and (-webkit-min-device-pixel-ratio : 1.5),
-only screen and (min-device-pixel-ratio : 1.5) {
-  /* Styles */
+  .mobile-menu-header {
+    padding-left: 40px;
+    height: 64px;
+  }
+
+  .mobile-menu-header, .mobile-menu-header .title {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    position: relative;
+  }
+
+  .mobile-menu-header .icon {
+    position: relative;
+    margin-right: 3px;
+    height: 42px;
+    width: 42px;
+    cursor: pointer;
+    -webkit-transform: translate(-9px,-1px);
+    transform: translate(-9px,-1px);
+  }
+
+  .mobile-menu-header .icon .image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    height: 2px;
+    width: 18px;
+  }
+
+  .image-container:before {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+
+  .image-container:after {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+  .image-container:before, .image-container:after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 18px;
+    background: #1c1b1b;
+  }
+  .mobile-menu-header .title {
+    color: inherit;
+    text-decoration: none;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    height: 14px;
+  }
+
+  .mobile-menu-header .title span {
+    display: block;
+    margin-bottom: 2px;
+    font-size: 28px;
+    font-family: Ropa Sans, Ariel, SansSerif, Serif;
+    font-weight: bold;
+  }
+
+  .mobile-menu-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding-top: 80px;
+    color: #1c1b1b;
+  }
+
+  .mobile-menu-nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 100%;
+    flex: 0 1 100%;
+  }
+
+  .mobile-nav-list {
+    padding: 0;
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    vertical-align: baseline;
+    border: 0;
+    list-style: none;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .mobile-nav-item {
+    display: block;
+    margin-bottom: 30px;
+    opacity: 1;
+    transform: matrix(1, 0, 0, 1, 0, 0);
+  }
+
+  .mobile-nav-link {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+    padding: 0 0 0 77px;
+    line-height: 1;
+    font-size: 24px;
+    font-weight: 300;
+    color: #fff;
+    border-left: 6px solid transparent;
+    transition: border .5s;
+    color: #1c1b1b;
+  }
 }

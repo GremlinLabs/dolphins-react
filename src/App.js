@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Header from './Header';
-import Home from './Home';
+import MobileMenu from './MobileMenu';
 import Footer from './Footer';
+import Instagram from './Instagram';
 import './App.css';
 const $ = require('jquery');
 
@@ -19,12 +20,14 @@ class App extends Component {
 
   render() {
     return (
-      <div className="page-wrapper">
+      <div>
           <Header/>
           <div className="content">
               {this.props.children}
           </div>
+          <Instagram/>
           <Footer/>
+          <MobileMenu/>
       </div>
     );
   }

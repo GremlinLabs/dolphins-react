@@ -3,27 +3,36 @@
  */
 import React, { Component } from 'react';
 import { IndexLink, Link } from 'react-router';
-const $ = require('jquery');
 import logo from './images/dolphins-logo.png';
 
-class Header_new extends Component {
+const $ = require('jquery');
+
+class Header extends Component {
     constructor(props) {
         super(props);
         this.state = {};
     }
 
+    componentDidMount() {
+        $(this.refs.burger).on("click touch", function() {
+            $("#mobile-menu-container").addClass("mobile-menu-container-full");
+        });
+    }
+
     render() {
         return (
             <div className="header-container">
+                <div className="app-logo">
+
+                </div>
                 <div className="app-header">
-                    <img src={logo} className="app-logo" alt="" />
                     <div className="title-container">
                         <h2></h2>
                     </div>
 
                 <nav>
                     <div className="mobile-nav">
-                        <span className="mob-nav-btn">Menu</span>
+                        <span ref="burger" id="mobile-menu-burger" className="mob-nav-btn">Menu</span>
                     </div>
                     <div id="navigation-container">
                         <div id="menu-container">
@@ -44,4 +53,4 @@ class Header_new extends Component {
     }
 }
 
-export default Header_new;
+export default Header;

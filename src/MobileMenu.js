@@ -17,6 +17,10 @@ class MobileMenu extends Component {
         });
     }
 
+    closeMenu() {
+        $("#mobile-menu-container").removeClass("mobile-menu-container-full");
+    }
+
     render() {
         return (
             <div id="mobile-menu-container">
@@ -37,16 +41,19 @@ class MobileMenu extends Component {
                                     <ul className="mobile-nav-list">
                                         <span>
                                             <li className="mobile-nav-item">
-                                                <Link className="mobile-nav-link" to="/gallery" activeClassName="nav-active">Gallery</Link>
+                                                <IndexLink className="mobile-nav-link" to="/" activeClassName="nav-active" onClick={this.closeMenu()}>Home</IndexLink>
                                             </li>
                                             <li className="mobile-nav-item">
-                                                <Link className="mobile-nav-link" to="/events" activeClassName="nav-active">What's Happening?</Link>
+                                                <Link className="mobile-nav-link" to="/gallery" activeClassName="nav-active" onClick={this.closeMenu()}>Gallery</Link>
                                             </li>
                                             <li className="mobile-nav-item">
-                                                <Link className="mobile-nav-link" to="/about" activeClassName="nav-active">About Us</Link>
+                                                <Link className="mobile-nav-link" to="/events" activeClassName="nav-active" onClick={this.closeMenu()}>What's Happening?</Link>
                                             </li>
                                             <li className="mobile-nav-item">
-                                                <Link className="mobile-nav-link" to="/contact" activeClassName="nav-active">Want to dive?</Link>
+                                                <Link className="mobile-nav-link" to="/about" activeClassName="nav-active" onClick={this.closeMenu()}>About Us</Link>
+                                            </li>
+                                            <li className="mobile-nav-item">
+                                                <Link className="mobile-nav-link" to="/contact" activeClassName="nav-active" onClick={this.closeMenu()}>Want to dive?</Link>
                                             </li>
                                         </span>
                                     </ul>

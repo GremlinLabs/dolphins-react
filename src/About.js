@@ -18,6 +18,10 @@ class About extends Component {
         this.state = {};
     }
 
+    componentDidMount() {
+
+    }
+
     render() {
         return (
             <div className="about-content container-fluid">

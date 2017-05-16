@@ -10,6 +10,11 @@ class Home extends Component {
         this.state = {};
     }
 
+    componentDidMount() {
+
+
+    }
+
     render() {
         return (
             <div className="home-content container-fluid">

@@ -10,6 +10,10 @@ class Contact extends Component {
         this.state = {};
     }
 
+    componentDidMount() {
+
+    }
+
     render() {
         return (
             <div className="contact-content container-fluid">

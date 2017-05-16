@@ -10,6 +10,7 @@ import diver_2 from './images/gallery/diver_2.jpg';
 import diver_3 from './images/gallery/diver_3.jpg';
 import diver_4 from './images/gallery/diver_4.jpg';
 import cave_1 from './images/gallery/cave_1.jpg';
+import camera_icon from './images/diving-icons-svg/svg/camera.svg';
 
 const $ = require('jquery');
 
@@ -81,6 +82,10 @@ class Gallery extends Component {
         }
     }
 
+    componentDidMount() {
+
+    }
+
     handleClose = () => {
         this.setState({
             isOpen: false
@@ -100,19 +105,22 @@ class Gallery extends Component {
     render() {
         return (
             <div className="gallery-content container-fluid">
-                <h2>PhotoSwipe</h2>
-                <hr/>
-                <button className='btn btn-primary' onClick={this.openPhotoSwipe}>
-                    Click me
-                </button>
+                <div className="gallery-title-container">
+                    <h1 className="gallery-title">Gallery</h1>
+                    <span>See the underwater wonderland through our lens....</span>
+                </div>
+                <div className="gallery-icon-container">
+                    <img src={camera_icon} alt="gallery" className="gallery-icon" onClick={this.openPhotoSwipe}/>
+                </div>
+
                 <PhotoSwipe isOpen={this.state.isOpen} items={this.state.items}
                             options={this.state.options}
                             onClose={this.handleClose}/>
-                <hr/>
+                {/*<hr/>
                 <h2>PhotoSwipeGallery</h2>
                 <hr/>
                 <PhotoSwipeGallery items={this.state.galleryItems}
-                                   thumbnailContent={this.getThumbnailContent}/>
+                                   thumbnailContent={this.getThumbnailContent}/>*/}
             </div>
         )
     }

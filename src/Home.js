@@ -28,6 +28,8 @@ class Home extends Component {
                         <div className="content-wrapper">
                             <p>
                                 Dolphins S.A.C is a scuba diving club based in Belfast, Northern Ireland. We are an active and well equipped club, training divers through a series of internationally recognised qualifications and skill development courses.
+                            </p>
+                            <p>
                                 Our club is a branch of the British Sub Aqua Club, the worlds largest diving club.
                             </p>
                             <iframe id="main-video" src="https://player.vimeo.com/video/197543527" width="640" height="360" frameBorder="0" allowFullScreen></iframe>

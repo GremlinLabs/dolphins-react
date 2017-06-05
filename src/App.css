@@ -358,6 +358,10 @@ ul li.footer-menu-item{
   background-color: white;
 }
 
+#mobile-menu-container {
+  display: none;
+}
+
 @media only screen and (min-width: 768px) {
   /* tablets and desktop */
 }
@@ -381,7 +385,7 @@ ul li.footer-menu-item{
   }
 
   .mob-nav-btn {
-    height: 15px;
+    height: 25px;
     display: block;
     background: url(images/mob-nav-icon.png) no-repeat;
     background-size: 29px 15px;
